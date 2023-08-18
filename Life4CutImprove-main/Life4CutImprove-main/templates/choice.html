@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>동영상 선택</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+            crossorigin="anonymous"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Gowun+Dodum&display=swap" rel="stylesheet">
+
+    <style>
+        * {
+            font-family: 'Gowun Dodum', sans-serif;
+        }
+
+        .mytitle {
+            width: 100%;
+            height: 250px;
+            background-image: linear-gradient(0deg, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('https://movie-phinf.pstatic.net/20210715_95/1626338192428gTnJl_JPEG/movie_image.jpg');
+            background-position: center;
+            background-size: cover;
+            color: white;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+
+            margin-bottom: 5%;
+        }
+        .mytitle > input {
+            width: 200px;
+            height: 50px;
+            background-color: transparent;
+            color: skyblue;
+            border-radius: 50px;
+            border: 1px solid skyblue;
+            margin-top: 30px;
+        }
+
+
+        .mytitle > input:hover {
+            border: 3px solid skyblue;
+        }
+        .mycheck {
+            margin: auto;
+            text-align: center;
+        }
+    </style>
+
+</head>
+<body>
+    <form action="/choice" method="POST">
+    <div class="mytitle">
+        <h1>인생네컷</h1>
+        <h5>원하는 영상을 선택하세요!!</h5>
+        <input type="submit" value="다음">
+    </div>
+        {% if (number==8) %}
+            <div class="mycheck">
+                <input type="checkbox" name="choice" value="1.mp4"><img src="{{url_for('static', filename='/user_image/1/000001.jpg')}}">
+                <input type="checkbox" name="choice" value="2.mp4"><img src="{{url_for('static', filename='/user_image/2/000001.jpg')}}">
+                <input type="checkbox" name="choice" value="3.mp4"><img src="{{url_for('static', filename='/user_image/3/000001.jpg')}}">
+                <input type="checkbox" name="choice" value="4.mp4"><img src="{{url_for('static', filename='/user_image/4/000001.jpg')}}">
+                <br>
+                <input type="checkbox" name="choice" value="5.mp4"><img src="{{url_for('static', filename='/user_image/5/000001.jpg')}}">
+                <input type="checkbox" name="choice" value="6.mp4"><img src="{{url_for('static', filename='/user_image/6/000001.jpg')}}">
+                <input type="checkbox" name="choice" value="7.mp4"><img src="{{url_for('static', filename='/user_image/7/000001.jpg')}}">
+                <input type="checkbox" name="choice" value="8.mp4"><img src="{{url_for('static', filename='/user_image/8/000001.jpg')}}">
+                <br>
+            </div>
+        {% else %}
+           <div class="mycheck">
+                <input type="checkbox" name="choice" value="1.mp4"><img src="{{url_for('static', filename='/user_image/1/000001.jpg')}}">
+                <input type="checkbox" name="choice" value="2.mp4"><img src="{{url_for('static', filename='/user_image/2/000001.jpg')}}">
+                <input type="checkbox" name="choice" value="3.mp4"><img src="{{url_for('static', filename='/user_image/3/000001.jpg')}}">
+                <input type="checkbox" name="choice" value="4.mp4"><img src="{{url_for('static', filename='/user_image/4/000001.jpg')}}">
+                <br>
+            </div>
+       {% endif %}
+    </form>
+</body>
+</html>
